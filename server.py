@@ -27,9 +27,7 @@ def index(food):
         if(type(value)==int):
             upc_list.append(value)
     relevant_df=df1[df1['FoodName'].str.contains(str(user_input),na=False)]
-    #upc_list=relevant_df['UPC'].to_list()
     length=len(upc_list)
-   #print(type(upc_list[0]))
     
     
     if(length>6):
@@ -41,12 +39,10 @@ def index(food):
     for value in df2['gtin_upc']:
         if(type(value)==int):
             gtinupc_list.append(value)
-    #gtinupc_list=df2['gtin_upc'].to_list()
     ingredients_list=df2['ingredients'].to_list()
     relevant_food_list=[]
     print(type(gtinupc_list[0]))
     
-    #upc_list.str.replace('-','').astype(int)
 
 
     count=0
@@ -63,12 +59,8 @@ def index(food):
     
 
     
-    print("hellllllooooo")
-    print(count)
-    
     
     if(len(relevant_food_list)==len(relevant_ingredients_list)):
-        print("STUFFF")
         print(food_list)
         print(relevant_ingredients_list)
         my_dict=dict(zip(food_list,relevant_ingredients_list))
