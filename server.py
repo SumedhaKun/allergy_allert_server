@@ -14,10 +14,7 @@ app = Flask(__name__)
 
 def index(food):
     user_input = request.args.get('food', default= "APPLE", type= str)
-    print("SEEEEEE:")
-    print(user_input)
     user_input=food
-    print(user_input)
     upc_list=[]
     food_list=[]
     
@@ -32,7 +29,6 @@ def index(food):
     
     if(length>6):
         length=6
-    print("UPC LENGHT: "+str(length))
     gtinupc_list=[]
     food_list=relevant_df['FoodName'].to_list()
     df2['gtin_upc']=df2['gtin_upc'].astype(int, errors='ignore')
